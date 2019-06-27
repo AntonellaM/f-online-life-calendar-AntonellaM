@@ -8,7 +8,7 @@ const AddDate = (props) => {
       <Link to="/"><button>Cancelar</button></Link>
       <form action="">
         <input type="date"/>
-        <input type="radio" value=":)"/>
+        <input type="radio" namevalue=":)"/>
         <input type="radio" value=":("/>
         <input type="textarea"/>
       </form>
