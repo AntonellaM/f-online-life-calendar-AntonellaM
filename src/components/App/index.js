@@ -9,21 +9,38 @@ class App extends React.Component {
     super(props);
     this.state = {
       moodRegister: [],
+      form: {
+        date: '',
+        face: '',
+        message: ''
+      }
     }
+    this.updateForm = this.updateForm.bind(this);
+    this.saveForm = this.saveForm.bind(this);
+    this.clearForm = this.clearForm.bind(this);
   }
 
-  saveDate(event) {
-    console.log(event)
-    // const newRegister = {
-    //   date: event.currentTarget.date,
-    //   face: event.currentTarget.face,
-    //   message: event.currentTarget.message
-    // }
-    // this.setState(prevState => {
-    //   return {...prevState.moodRegister.concat(newRegister)}
-    // });
+  updateForm(event) {
+    const data =  event.currentTarget.value;
+    const name =  event.currentTarget.name;
+    this.setState(prevState => ({ form: {...prevState.form, [name]: data }}));
+  }
+
+  saveForm() {
+    const newRegister = this.state.form;
+    const newMoodRegister = this.state.moodRegister;
+    newMoodRegister.push(newRegister);
+    this.setState(prevState => ({ moodRegister: newMoodRegister}), () => this.clearForm());
   }
   
+  clearForm() {
+    this.setState({ form: {
+      date: '',
+      face: '',
+      message: ''
+    }})
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -31,7 +48,14 @@ class App extends React.Component {
           <Route exact path="/" render={routerprops => (
             <Home moodRegister={this.props.moodRegister}/>
           )}/>
-          <Route path="/add-date" component={AddDate}/>
+          <Route path="/add-date" render={routerprops => (
+            <AddDate 
+              form={this.state.form}
+              updateForm={this.updateForm}
+              saveForm={this.saveForm}
+              clearForm={this.clearForm}
+            />
+          )}/>
         </Switch>
       </React.Fragment>
     );
