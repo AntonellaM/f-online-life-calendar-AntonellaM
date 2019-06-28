@@ -56,7 +56,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+      <main class="app__main">
         <Switch>
           <Route exact path="/" render={routerprops => (
             <Home moodRegister={this.state.moodRegister}/>
@@ -70,7 +70,7 @@ class App extends React.Component {
             />
           )}/>
         </Switch>
-      </React.Fragment>
+      </main>
     );
   }
 }
