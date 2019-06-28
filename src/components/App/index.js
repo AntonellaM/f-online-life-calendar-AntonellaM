@@ -46,7 +46,7 @@ class App extends React.Component {
       <React.Fragment>
         <Switch>
           <Route exact path="/" render={routerprops => (
-            <Home moodRegister={this.props.moodRegister}/>
+            <Home moodRegister={this.state.moodRegister}/>
           )}/>
           <Route path="/add-date" render={routerprops => (
             <AddDate 

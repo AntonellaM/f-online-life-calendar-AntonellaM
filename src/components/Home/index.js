@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Date from '../Date';
 
 const Home = (props) => {
+  console.log('home moodregister', props.moodRegister)
   return (
     <React.Fragment>
       <header><Link to="/add-date"><button>Añadir</button></Link></header>
