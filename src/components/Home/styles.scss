@@ -1,0 +1,32 @@
+.home__header {
+    &-button--add {
+        width: 100%;
+        height: 30px;
+        border-radius: none;
+        border: none;
+        background-color: lightblue;
+        color: white;
+    }
+}
+
+.home__main {
+    min-height: calc(100vh - 30px);
+    width: 100%;
+    margin: 0 auto;
+
+    .mood-list {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .mood-item {
+        width: 120px;
+        height: 120px;
+        padding: 10px;
+        margin: 5px;
+    }
+}
