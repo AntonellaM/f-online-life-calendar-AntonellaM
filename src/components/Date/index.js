@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Date = (props) => {
-  console.log('date dailyregister', props.dateRegister)
   return (
     <div>
       <p>{props.dateRegister.date}</p>

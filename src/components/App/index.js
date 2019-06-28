@@ -20,6 +20,19 @@ class App extends React.Component {
     this.clearForm = this.clearForm.bind(this);
   }
 
+  componentDidUpdate(){
+    localStorage.setItem("moodRegisterLS", JSON.stringify(this.state.moodRegister));
+  }
+
+  componentDidMount(){
+    if(localStorage.moodRegisterLS){
+      const objectFromLS= JSON.parse(localStorage.getItem("moodRegisterLS"));
+      this.setState({
+        moodRegister: objectFromLS
+      })
+    }
+  }
+
   updateForm(event) {
     const data =  event.currentTarget.value;
     const name =  event.currentTarget.name;
