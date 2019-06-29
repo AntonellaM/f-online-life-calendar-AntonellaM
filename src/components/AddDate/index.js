@@ -40,6 +40,8 @@ const AddDate = (props) => {
             onChange={props.updateForm}
           />:(
         </div>
+        {props.form.face === ':)'
+        ? 
         <div className="add-date__form--message">
           <label htmlFor="message" className="add-date__label">Mensaje:</label>
           <input
@@ -51,6 +53,8 @@ const AddDate = (props) => {
             onChange={props.updateForm}
           />
         </div>
+        : ''
+        }
       </form>
       <div className="add-date__buttons">
         <Link to="/"><button className="add-date__button add-date__button--save" onClick={props.saveForm}>Guardar</button></Link>

@@ -21,11 +21,16 @@
         height: 60px;
         margin: 10px 0;
         font-size: 30px;
-        background-color: yellow;
+        background-color: #B6F386;
         border-radius: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
+
+        &--sad {
+            background-color: #975293;
+            color: white;
+        }
     }
 
     &__message {
